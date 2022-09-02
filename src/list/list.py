@@ -6,6 +6,7 @@ from typing import List
 """
 Python data structures : list.
 """
+
 values: List[int] = []
 
 
@@ -21,19 +22,18 @@ def lest_exercise1() -> None:
     """
 
     # Read values from the user and store them in a list until a 0 is entered
-    line = input("Enter a number (0) line to quit: ")
-    while line != "0":
-        num = int(line)
+    num = int(input("Enter a number (0 to quit): "))
+    while num != 0:
         values.append(num)
-
-        line = input("Enter a number (0) line to quit: ")
+        num = int(input("Enter a number (0 to quit): "))
 
     # Sort values into ascending order
     values.sort()
 
-    # Display values
-    for v in values:
-        print(v)
+    # Display the values in ascending order
+    print("The values, sorted into ascending order, are:")
+    for num in values:
+        print(num)
 
 
 def main() -> None:
