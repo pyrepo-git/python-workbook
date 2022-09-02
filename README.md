@@ -1,2 +1,2 @@
 # python-workbook
-My python workbook, with codes
+Python workbook for codes
