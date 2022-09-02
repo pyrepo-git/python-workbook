@@ -10,11 +10,15 @@
 
 priority = ["Значительный", "Средний", "Тривиальный"]
 severity = [
-    "Низкий", "Незначительный", "Блокирующий", "Высокий", "Критический"
+    "Низкий",
+    "Незначительный",
+    "Блокирующий",
+    "Высокий",
+    "Критический",
 ]
 
 
-def sort_priority(element):
+def sort_priority(element: str) -> int:
     if element == "Высокий":
         return 0
     if element == "Средний":
@@ -24,7 +28,7 @@ def sort_priority(element):
     return 100
 
 
-def sort_severity(element):
+def sort_severity(element: str) -> int:
     if element == "Блокирующий":
         return 0
     if element == "Критический":
@@ -41,20 +45,21 @@ def sort_severity(element):
 def work() -> None:
     temporary = priority + severity
     priority_res = [
-        x for x in temporary
+        x
+        for x in temporary
         if x == "Высокий" or x == "Средний" or x == "Низкий"
     ]
     priority_res.sort(key=sort_priority)
 
     severity_res = [
-        x for x in temporary
-        if x == "Блокирующий" or
-           x == "Критический" or
-           x == "Значительный" or
-           x == "Незначительный" or
-           x == "Тривиальный"
+        x
+        for x in temporary
+        if x == "Блокирующий"
+        or x == "Критический"
+        or x == "Значительный"
+        or x == "Незначительный"
+        or x == "Тривиальный"
     ]
-
     severity_res.sort(key=sort_severity)
 
     print(priority_res)
