@@ -130,13 +130,81 @@ def list_exercise3() -> None:
         print("The original data: ", numbers)
 
 
+# =======================Exercise 4 ===================================
+def list_exercise4() -> None:
+    """
+    Exercise 4:Avoiding Duplicates
+    (Solved, 21 Lines)
+        In this exercise, you will create a program that reads words
+        from the user until the user enters a blank line. After the user
+        enters a blank line your program should display each word
+        entered by the user exactly once. The words should be displayed
+        in the same order that they were first entered.
+    """
+    words = []
+    word = input("Enter a word (blank line to quit): ")
+    while word != "":
+        # Add word to the list if
+        # it is not already present in it
+        if word not in words:
+            words.append(word)
+        word = input("Enter a word (blank line to quit): ")
+
+    for word in words:
+        print(word)
+
+
+# =======================Exercise 5 ===================================
+def list_exercise5() -> None:
+    """
+    Exercise 5: Negatives,Zeros and Positives
+    (Solved, 36 Lines)
+        Create a program that reads integers from the user until a
+        blank line is entered. Once all the integers have been read
+        your program should display all the negative numbers, followed
+        by all the zeros, followed by all the positive numbers.Within
+        each group the numbers should be displayed in the same order
+        that they were entered by the user. For example, if the user
+        enters the values 3, -4, 1, 0, -1, 0, and -2 then your program
+        should output the values -4, -1, -2, 0, 0, 3, and 1. Your program
+        should display each value on its own line.
+    """
+    positives = []
+    zeros = []
+    negatives = []
+
+    line = input("Enter integer (blank - to quit): ")
+    while line != "":
+        num = int(line)
+        if num < 0:
+            negatives.append(num)
+        elif num > 0:
+            positives.append(num)
+        else:
+            zeros.append(num)
+        line = input("Enter integer (blank - to quit): ")
+
+    for n in negatives:
+        print(n)
+
+    for n in zeros:
+        print(n)
+
+    for n in positives:
+        print(n)
+
+
 def main() -> None:
     # Passed.
     # list_exercise1()
     # Passed
     # list_exercise2()
     # Passed
-    list_exercise3()
+    # list_exercise3()
+    # Passed
+    # list_exercise4()
+
+    list_exercise5()
 
 
 if __name__ == "__main__":
