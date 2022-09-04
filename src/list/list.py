@@ -1,6 +1,7 @@
 #!/usr/bin/env python 3
 # -*- coding: utf-8 -*-
 
+import string
 from typing import List
 
 """
@@ -263,11 +264,25 @@ def list_exercise7():
     print(perfect)
 
 
-# =======================Exercise 7 ===================================
+# =======================Exercise 8 ===================================
 def only_the_words(words: str) -> List[str]:
-    words.rstrip()
-    only_words = words.split()
-    result = [x for x in only_words if x.isalpha() is True]
+    result = []
+    words = words.split()
+
+    for word in words:
+
+        while len(word) > 0 and word[-1] in string.punctuation:
+            word = word[: len(word) - 1]
+        while len(word) > 0 and word[1] in string.punctuation:
+            word = word[2:]
+
+        if len(word) > 0:
+            if word[0] in string.punctuation:
+                w = "".join([x for x in word if x not in string.punctuation])
+            else:
+                w = word
+            if len(w) > 0:
+                result += w.split()
     return result
 
 
