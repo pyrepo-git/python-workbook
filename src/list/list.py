@@ -194,17 +194,123 @@ def list_exercise5() -> None:
         print(n)
 
 
+# =======================Exercise 6 ===================================
+def proper_divisors(num: int) -> List[int]:
+    divisors = []
+    for n in range(1, num):
+        if num % n == 0:
+            divisors.append(n)
+    return divisors
+
+
+def read_user_input() -> str:
+    word = input("Enter a word (blank line to quit): ")
+    return word
+
+
+def list_exercise6() -> None:
+    """
+    Exercise 6: List of Proper Divisors
+    (36 Lines)
+        A proper divisor of a positive integer, n, is a positive
+        integer less than n which divides evenly into n. Write a
+        function that computes all the proper divisors of a
+        positive integer. The integer will be passed to the
+        function as its only parameter. The function will return a list
+        containing all the proper divisors as its only result. Complete
+        this exercise by writing a main program that demonstrates the
+        function by reading a value from the user and displaying the list
+        of its proper divisors. Ensure that your main program only runs
+         when your solution has not been imported into another file.
+    """
+    num = int(read_user_input())
+    divisors = proper_divisors(num)
+    print(divisors)
+
+
+# =======================Exercise 7 ===================================
+def perfect_number(number: int) -> bool:
+    divisors = proper_divisors(number)
+    total = 0
+    for n in divisors:
+        total += n
+    if total == number:
+        return True
+    else:
+        return False
+
+
+def list_exercise7():
+    """
+    Exercise 7: Perfect Numbers
+    (Solved, 35 Lines)
+        An integer, n, is said to be perfect when the sum of all the
+        proper divisors of n is equal to n. For example, 28 is a
+        perfect number because its proper divisors are 1, 2, 4, 7 and
+        14, and 1 + 2 + 4 + 7 + 14 = 28. Write a function that
+        determines whether a positive integer is perfect. Your
+        function will take one parameter. If that parameter is a
+        perfect number than your function will return True. Otherwise,
+        it will return False. In addition, write a main program that
+        uses your function to identify and display all the perfect
+        numbers between 1 and 10,000.
+    """
+    max_number = 10000
+    perfect = []
+    for n in range(1, max_number):
+        if perfect_number(n):
+            perfect.append(n)
+    print(perfect)
+
+
+# =======================Exercise 7 ===================================
+def only_the_words(words: str) -> List[str]:
+    words.rstrip()
+    only_words = words.split()
+    result = [x for x in only_words if x.isalpha() is True]
+    return result
+
+
+def list_exercise8() -> None:
+    """
+    Exercise 8: Only theWords
+    (38 Lines)
+        In this exercise you will create a program that identifies all
+        the words in a string entered by the user. Begin by writing a
+        function that takes a string as its only parameter. Your
+        function should return a list of the words in the string with
+        the punctuation marks at the edges of the words removed. The
+        punctuation arks that you must consider include commas,
+        periods, question marks, hyphens, apostrophes, exclamation points,
+        colons, and semicolons. Do not remove punctuation marks that
+        appear in the middle of a word, such as the apostrophes used to
+        form a contraction. For example, if your function is provided
+        with the string "Contractions include: don’t, isn’t, and would
+        not." then your function should return the list
+        ["Contractions", "include", don’t", "isn’t", "and", "would not"].
+    """
+    word = read_user_input()
+    words = only_the_words(word)
+    print(words)
+
+
 def main() -> None:
     # Passed.
     # list_exercise1()
-    # Passed
+    # Passed.
     # list_exercise2()
-    # Passed
+    # Passed.
     # list_exercise3()
-    # Passed
+    # Passed.
     # list_exercise4()
+    # Passed.
+    # list_exercise5()
+    # Passed.
+    # list_exercise6()
+    # Passed.
+    # list_exercise7()
 
-    list_exercise5()
+    list_exercise8()
 
 
 if __name__ == "__main__":
