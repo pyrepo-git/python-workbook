@@ -309,6 +309,41 @@ def list_exercise8() -> None:
     print(words)
 
 
+# =======================Exercise 9 ===================================
+def list_exercise9():
+    """
+    Exercise 9:Word byWord Palindromes
+        Exercises 75 and 76 previously introduced the notion of
+        a palindrome. Such palindromes examined the characters in a
+        string, possibly ignoring spacing and punctuation marks,
+        to see if the string was the same forwards and backwards.
+        While palindromes are most commonly considered character by
+        character, the notion of a palindrome can be extended to larger
+        units. For example, while the sentence “Is it crazy how saying
+        sentences backwards creates backwards sentences saying how
+        crazy it is?” isn’t a character by character palindrome, it
+        is a palindrome when examined a word at a time (and when
+        capitalization and punctuation are ignored). Other examples of
+        word by word palindromes include “Herb the sage eats sage, the
+        herb” and “Information school graduate seeks graduate school
+        information”. Create a program that reads a string from the
+        user. Your program should report whether or not the entered
+        string is a word by word palindrome. Ignore spacing and
+        punctuation when determining the result.
+    """
+    word = read_user_input()
+    word = word.lower()
+    words = only_the_words(word)
+    reverse_words = words[::-1]
+    if words == reverse_words:
+        print("Input string is palindrome")
+    else:
+        print("Input string is not palindrome")
+
+    print(words)
+    print(reverse_words)
+
+
 def main() -> None:
     # Passed.
     # list_exercise1()
@@ -324,8 +359,10 @@ def main() -> None:
     # list_exercise6()
     # Passed.
     # list_exercise7()
+    # Passed.
+    # list_exercise8()
 
-    list_exercise8()
+    list_exercise9()
 
 
 if __name__ == "__main__":
