@@ -347,7 +347,7 @@ def list_exercise9():
 # =======================Exercise 10 ===================================
 def list_exercise10():
     """
-    Exercise 119: Below and Above Average
+    Exercise 10: Below and Above Average
         Write a program that reads numbers from the user until a blank
         line is entered. Your program should display the average of all
         of the values entered by the user. Then the program should
