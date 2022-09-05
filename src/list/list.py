@@ -344,6 +344,47 @@ def list_exercise9():
     print(reverse_words)
 
 
+# =======================Exercise 10 ===================================
+def list_exercise10():
+    """
+    Exercise 119: Below and Above Average
+        Write a program that reads numbers from the user until a blank
+        line is entered. Your program should display the average of all
+        of the values entered by the user. Then the program should
+        display all of the below average values, followed by all of the
+        average values (if any), followed by all of the above average
+        values. An appropriate label should be displayed before each
+        list of values.
+    """
+    numbers = []
+    word = read_user_input()
+    while word != "":
+        num = int(word)
+        numbers.append(num)
+        word = read_user_input()
+
+    total = 0
+    for num in numbers:
+        total += num
+    if len(numbers) > 0:
+        average = total / len(numbers)
+        print(average)
+
+        for val1 in numbers:
+            if val1 < average:
+                print(val1)
+        print("-----")
+
+        for val2 in numbers:
+            if val2 == average:
+                print(val2)
+        print("-----")
+
+        for val3 in numbers:
+            if val3 > average:
+                print(val3)
+
+
 def main() -> None:
     # Passed.
     # list_exercise1()
@@ -361,8 +402,10 @@ def main() -> None:
     # list_exercise7()
     # Passed.
     # list_exercise8()
+    # Passed
+    # list_exercise9()
 
-    list_exercise9()
+    list_exercise10()
 
 
 if __name__ == "__main__":
