@@ -466,7 +466,6 @@ def list_exercise12():
 
 
 def main() -> None:
-
     # Passed.
     # list_exercise1()
     # Passed.
@@ -490,7 +489,7 @@ def main() -> None:
     # Passed.
     # list_exercise11()
     # Passed.
-    # list_exercise12()
+    list_exercise12()
 
 
 if __name__ == "__main__":
