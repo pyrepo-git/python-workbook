@@ -456,7 +456,6 @@ def list_exercise12():
     """
     random_list = []
     for index in range(0, MAX_NUMBERS):
-        ok = False
         n = random.randint(MIN_NUMBER, MAX_NUMBER + 1)
         while n in random_list:
             n = random.randint(MIN_NUMBER, MAX_NUMBER + 1)
