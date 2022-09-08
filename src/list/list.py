@@ -385,6 +385,59 @@ def list_exercise10():
                 print(val3)
 
 
+# =======================Exercise 11 ===================================
+def concat_items(item1: str, item2: str) -> str:
+    return "".join(item1) + " and " + "".join(item2)
+
+
+def formatting_list(items: list) -> str:
+    result = ""
+    if len(items) == 1:
+        return "".join(items)
+    elif len(items) == 2:
+        return concat_items(items[-2], items[-1])
+    elif len(items) > 2:
+        for index in range(len(items)):
+            if index < len(items) - 2:
+                result += "".join(items[index]) + ", "
+            else:
+                result += concat_items(items[-2], items[-1])
+                return result
+    else:
+        return ""
+
+
+def list_exercise11():
+    """
+    Exercise 11: Formatting a List
+    When writing out a list of items in English, one normally separates
+    the items with commas. In addition, theword “and” is normally
+    included before the last item, unless the list only contains one
+    item. Consider the following four lists:
+
+    apples
+    apples and oranges
+    apples, oranges and bananas
+    apples, oranges, bananas and lemons
+
+    Write a function that takes a list of strings as its only
+    parameter. Your function should return a string that contains
+    all the items in the list, formatted in the manner described
+    previously, as its only result. While the examples shown
+    previously only include lists containing four elements or less,
+    your function should behave correctly for lists of any length.
+    Include a main program that reads several items from the user,
+    formats them by calling your function, and then displays the result
+    returned by the function.
+    """
+    word = read_user_input()
+    items = word.split()
+    text = formatting_list(items)
+    print(word)
+    print(items)
+    print(text)
+
+
 def main() -> None:
     # Passed.
     # list_exercise1()
@@ -404,8 +457,10 @@ def main() -> None:
     # list_exercise8()
     # Passed
     # list_exercise9()
+    # Passed.
+    # list_exercise10()
 
-    list_exercise10()
+    list_exercise11()
 
 
 if __name__ == "__main__":
