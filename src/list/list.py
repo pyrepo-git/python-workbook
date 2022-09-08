@@ -2,12 +2,16 @@
 # -*- coding: utf-8 -*-
 
 import string
+import random
 from typing import List
 
 """
 Python data structures : list.
 """
 
+MIN_NUMBER = 1
+MAX_NUMBER = 49
+MAX_NUMBERS = 6
 values: List[int] = []
 
 
@@ -438,7 +442,33 @@ def list_exercise11():
     print(text)
 
 
+# =======================Exercise 12 ===================================
+def list_exercise12():
+    """
+    Exercise 121: Random Lottery Numbers
+        In order to win the top prize in a particular lottery, one must
+        match all 6 numbers on his or her ticket to the 6 numbers
+        between 1 and 49 that are drawn by the lottery
+        organizer. Write a program that generates a random selection of
+        6 numbers for a lottery ticket. Ensure that the 6 numbers
+        selected do not contain any duplicates. Display the numbers in
+        ascending order.
+    """
+    random_list = []
+    for index in range(0, MAX_NUMBERS):
+        ok = False
+        while not ok:
+            n = random.randint(MIN_NUMBER, MAX_NUMBER)
+            if n not in random_list:
+                random_list.append(n)
+                ok = True
+
+    random_list.sort()
+    print(random_list)
+
+
 def main() -> None:
+
     # Passed.
     # list_exercise1()
     # Passed.
@@ -459,8 +489,10 @@ def main() -> None:
     # list_exercise9()
     # Passed.
     # list_exercise10()
-
-    list_exercise11()
+    # Passed.
+    # list_exercise11()
+    # Passed.
+    # list_exercise12()
 
 
 if __name__ == "__main__":
