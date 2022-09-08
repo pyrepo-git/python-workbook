@@ -457,12 +457,10 @@ def list_exercise12():
     random_list = []
     for index in range(0, MAX_NUMBERS):
         ok = False
-        while not ok:
-            n = random.randint(MIN_NUMBER, MAX_NUMBER)
-            if n not in random_list:
-                random_list.append(n)
-                ok = True
-
+        n = random.randint(MIN_NUMBER, MAX_NUMBER + 1)
+        while n in random_list:
+            n = random.randint(MIN_NUMBER, MAX_NUMBER + 1)
+        random_list.append(n)
     random_list.sort()
     print(random_list)
 
