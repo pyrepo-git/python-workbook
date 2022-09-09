@@ -464,6 +464,60 @@ def list_exercise12():
     print(random_list)
 
 
+# =======================Exercise 13 ===================================
+def pig_latin(words: List[str]) -> List[str]:
+    pig_words = []
+    vowels = ["a", "e", "i", "o", "u", "y"]
+    for word in words:
+        if word[0] in vowels:
+            word += "".join(["w", "a", "y"])
+            pig_words.append(word)
+        else:
+            index = 0
+            temp_word = []
+            while index < len(word):
+                char = str(word[index])
+                if char not in vowels:
+                    temp_word.append(char)
+                    word = word.replace(char, "", 1)
+                else:
+                    word += "".join(temp_word)
+                    word += "".join(["a", "y"])
+                    pig_words.append(word)
+                    index = len(word) + 1
+    return pig_words
+
+
+def list_exercise13():
+    """
+    Exercise 13: Pig Latin
+    Pig Latin is a language constructed by transforming English words.
+    While the origins of the language are unknown, it is mentioned in
+    at least two documents from the nineteenth century, suggesting that
+    it has existed for more than 100 years. The following rules are
+     used to translate English into Pig Latin:
+    • If the word begins with a consonant (including y), then all
+      letters at the beginning of the word, up to the first vowel
+      (excluding y), are removed and then added to the end of the word,
+      followed by ay. For example:
+        computer becomes omputercay
+        think becomes inkthay.
+    • If the word begins with a vowel (not including y), then way is
+      added to the end of the word. For example:
+       algorithm becomes algorithmway
+       office becomes officeway.
+    Write a program that reads a line of text from the user. Then your
+    program should translate the line into Pig Latin and display the
+    result. You may assume that the string entered by the user only
+     contains lowercase letters and spaces.
+    """
+    word = read_user_input()
+    words = word.split()
+    pig_text = pig_latin(words)
+    print(pig_text)
+    print(*pig_text)
+
+
 def main() -> None:
     # Passed.
     # list_exercise1()
@@ -488,7 +542,10 @@ def main() -> None:
     # Passed.
     # list_exercise11()
     # Passed.
-    list_exercise12()
+    # list_exercise12()
+    # Passed.
+    # list_exercise13()
+    pass
 
 
 if __name__ == "__main__":
